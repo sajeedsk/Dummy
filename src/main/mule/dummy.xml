@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="dummyFlow" doc:id="a2acc8b7-ad97-4de2-b66b-f7ff3deb90a2" >
+		<flow-ref doc:name="Flow Reference" doc:id="58060663-9ae5-4271-95d5-086830a22eb2" name="dummyFlow1"/>
+	</flow>
+	<flow name="dummyFlow1" doc:id="4ad95331-daee-4fe7-9db1-9ca68e7ebb37" >
+		<ee:transform doc:name="Transform Message" doc:id="74d07d7a-aa6b-4566-a24b-cb913d1a3ecf" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
